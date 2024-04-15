@@ -23,6 +23,7 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requ
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
 COPY .devcontainer/act4e-check /usr/local/bin
+RUN sed -i 's/\r$//' /usr/local/bin/act4e-check
 RUN chmod +x /usr/local/bin/act4e-check
 
 
